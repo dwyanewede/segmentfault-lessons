@@ -47,8 +47,11 @@ public class SpringCloudLesson3ConfigClientApplication {
         @Override
         public Health health() {
             Health.Builder builder = Health.status(Status.UP);
+
             builder.withDetail("name", "MyHealthIndicator");
+
             builder.withDetail("timestamp", System.currentTimeMillis());
+
             return builder.build();
         }
     }
